@@ -8,6 +8,6 @@ const InteractionsSchema = new Schema({
  cats_matches: [String],  
 })
 
-const Interaction = mongoose.model('cats', CatSchema)
+const Interaction = mongoose.model('interaction', CatSchema)
 
 module.exports = Interaction 
