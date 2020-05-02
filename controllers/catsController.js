@@ -14,8 +14,30 @@ const catList = (req, res) => {
   res.send('catList ctrl')
 }
 
+const like = (req, res) => {
+  res.send('like')
+}
+const unlike = (req, res) => {
+  res.send('unlike')
+}
+
+const addInterest = (req, res) =>{
+  res.send('add interest')
+}
+const removeInterest = (req, res) =>{
+  res.send('remove interest')
+}
+const updatePreferences = (req, res) =>{
+  res.send('update preferences')
+}
+
 module.exports = {
   login,
   signup,
-  catList
+  catList,
+  like,
+  unlike,
+  addInterest,
+  removeInterest,
+  updatePreferences
 }
