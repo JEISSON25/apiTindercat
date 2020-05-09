@@ -1,12 +1,12 @@
-const AddInterestService = require('"../services/interests/add_interes');
-const GetllService = require('"../services/interests/add_interes');
+const AddInterestService = require("../services/interests/add_interes");
+const GetllService = require("../services/interests/getAll");
 
-const getAll = (req, res) => {
+const getAll = async (req, res) => {
   const response = await GetllService();
   res.send("Get all");
 };
 
-const add = (req, res) => {
+const add = async (req, res) => {
   const interests = req.body;
   const response = await AddInterestService(interests);
   res.json(response);
