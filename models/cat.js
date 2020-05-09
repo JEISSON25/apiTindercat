@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const CatSchema = new Schema({
   name: String,
@@ -13,11 +13,14 @@ const CatSchema = new Schema({
   preferences: {
     gender: String,
     age_min: Number,
-    age_max: Number
+    age_max: Number,
   },
-  interests: [String]
-})
+  interests: [String],
+  cats_likes: [String],
+  cats_unlikes: [String],
+  cats_matches: [String],
+});
 
-const Cat = mongoose.model('cats', CatSchema)
+const Cat = mongoose.model("cats", CatSchema);
 
-module.exports = Cat
+module.exports = Cat;
