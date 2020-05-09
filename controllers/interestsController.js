@@ -3,7 +3,7 @@ const GetllService = require("../services/interests/getAll");
 
 const getAll = async (req, res) => {
   const response = await GetllService();
-  res.send("Get all");
+  res.json(response);
 };
 
 const add = async (req, res) => {
