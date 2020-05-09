@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const InteractionsSchema = new Schema({
- cat_id: String,
- casts_likes: [String],
- cats_unlikes: [String],
- cats_matches: [String],  
+const InterationsSchema = new Schema ({
+  cat_id: String,
+  cats_likes: [String],
+  cats_unlikes: [String],
+  cats_matches: [String],
 })
 
-const Interaction = mongoose.model('interaction', CatSchema)
+const Interation = mongoose.model('interactions', InterationsSchema)
 
-module.exports = Interaction 
+module.exports = Interation

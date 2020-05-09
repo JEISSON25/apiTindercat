@@ -1,11 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const InterestSchema = new Schema({
-  interests: String,
-  
+const InterestsSchema = new Schema ({
+  interest: String
 })
 
-const Interest = mongoose.model('interest', CatSchema)
+const Interest = mongoose.model('interests', InterestsSchema)
 
 module.exports = Interest
