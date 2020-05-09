@@ -1,41 +1,52 @@
-const loginService = require('../services/cats/login')
-const signupService = require('../services/cats/signup')
+const loginService = require("../services/cats/login");
+const signupService = require("../services/cats/signup");
+const addInterestService = require("../services/cats/add-interest");
+const removeInterestService = require("../services/cats/remove-interest");
+const updatePreferencesService = require("../services/cats/update-preferences");
 
 const login = (req, res) => {
-  const { email, password } = req.query
-  const response = loginService(email, password)
-  res.json(response)
-}
+  const { email, password } = req.query;
+  const response = loginService(email, password);
+  res.json(response);
+};
 
 const signup = async (req, res) => {
-  cat = req.body
-  response = await signupService(cat)
-  res.send(response)
-}
+  const cat = req.body;
+  const response = await signupService(cat);
+  res.json(response);
+};
 
 const catList = (req, res) => {
-  res.send('catList ctrl')
-}
+  res.send("catList ctrl");
+};
 
 const liked = (req, res) => {
-  res.send('like')
-}
+  // TODO
+  res.send("like");
+};
 
 const unliked = (req, res) => {
-  res.send('unlike')
-}
+  // TODO
+  res.send("unlike");
+};
 
-const addInterest = (req, res) => {
-  res.send('add interest')
-}
+const addInterest = async (req, res) => {
+  const { catId, interestId } = req.body;
+  const response = await addInterestService(catId, interestId);
+  res.json(response);
+};
 
-const removeInterest = (req, res) => {
-  res.send('remove interest')
-}
+const removeInterest = async (req, res) => {
+  const { catId, interestId } = req.body;
+  const response = await removeInterestService(catId, interestId);
+  res.json(response);
+};
 
-const updatePreferences = (req, res) => {
-  res.send('update Preferences')
-}
+const updatePreferences = async (req, res) => {
+  const { catId, preferences } = req.body;
+  const response = await updatePreferencesService(catId, preferences);
+  res.json(response);
+};
 
 module.exports = {
   login,
@@ -45,5 +56,5 @@ module.exports = {
   unliked,
   addInterest,
   removeInterest,
-  updatePreferences
-}
+  updatePreferences,
+};
